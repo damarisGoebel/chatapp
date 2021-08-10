@@ -1,11 +1,16 @@
-import './App.css';
+import './App.css'
+import Footer from './components/Footer/Footer'
+import Container from './components/Container/Container'
 
 function App() {
   return (
     <div className="App">
-      <p>ChatApp</p>
+      <Container>
+        <p>ChatApp</p>
+      </Container>
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

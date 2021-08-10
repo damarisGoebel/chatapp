@@ -1,0 +1,19 @@
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--blue);
+}
+
+.input {
+    border: 3px solid var(--dark-blue);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 80%;
+    margin-right: 8px;
+}
+
+.form {
+    padding: 8px 0;
+}
