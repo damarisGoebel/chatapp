@@ -1,9 +1,6 @@
 # ChatApp with React & TypeScript
 
-a simple chat interface in Javascript, which is able to send and display messages from all senders. Something like this:
-
-<img src="chat.png" width="400" alt="chat" />
-
+a simple chat interface in Javascript, which is able to send and display messages from all senders. 
 There is a simple API which receives new messages in a POST endpoint and lists all messages reverse chronological order in a GET endpoint.
 The app is responsive and fast.
 
