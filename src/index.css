@@ -9,6 +9,9 @@ body {
   font-size: 20px;
   line-height: 1.5;
   box-sizing: border-box;
+  background-image: url("./assets/Body\ BG.png");
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 *,

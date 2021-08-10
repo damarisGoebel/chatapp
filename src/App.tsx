@@ -1,12 +1,17 @@
-import './App.css'
 import Footer from './components/Footer/Footer'
 import Container from './components/Container/Container'
+import Message from './components/Message/Message'
+import Response from './components/Response/Response'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Container>
-        <p>ChatApp</p>
+        <Message />
+        <Message />
+
+        <Response />
+
       </Container>
       <Footer />
     </div>

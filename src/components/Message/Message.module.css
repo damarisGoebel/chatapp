@@ -1,0 +1,21 @@
+.messageBubble {
+    background-color: var(--white);
+    border-radius: 6px;
+    border: 2px solid var(--grey);
+    padding: 16px;
+    max-width: 70%;
+    left: 0;
+    margin: 12px 0;
+}
+
+.smallText {
+    font-size: 16px; 
+    color: var(--font-grey-light);
+    text-align: left;
+}
+
+.text {
+    font-size: 20px; 
+    color: var(--font-grey-dark);
+    text-align: left;
+}
