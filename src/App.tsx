@@ -8,11 +8,16 @@ import { getAllMessages } from './api/api'
 
 function App() {
   const [messages, setMessages] = React.useState<any>([])
+  const [response, setResponse] = React.useState<any>({})
 
   React.useEffect(() => {
     getAllMessages().then(function (result) {
-      setMessages(result)
+      let messageArrayWithoutLastOne = result.slice(0,-1);;
+      setMessages(messageArrayWithoutLastOne)
+      let lastOne = result[result.length - 1]
+      setResponse(lastOne)
     })
+
   }, [])
 
   return (
@@ -22,7 +27,9 @@ function App() {
           return <Message key={index} author={message.author} message={message.message} timestamp={message.timestamp} />
         })
         }
-        <Response />
+        {response !== {} &&  <Response message={response.message} timestamp={response.timestamp} />
+        }
+        
       </Container>
       <Footer />
     </div>

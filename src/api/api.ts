@@ -1,5 +1,3 @@
-import { Message } from "./types"
-
 const token = process.env.REACT_APP_TOKEN
 
 export async function getAllMessages() {
@@ -19,9 +17,14 @@ export async function get10MessagesAfterTimestamp() {
     return response
 }
 
-export async function sendMessage(message: Message) {
+export async function sendMessage(message: any) {
     const response = await fetch('https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0', {
         method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'token': '7NzzoC3M6sTy'
+        },
         body: JSON.stringify(message)
     })
     return response.json()

@@ -1,6 +1,6 @@
 export interface Message  {
     message: string,
     author: string,
-    timestamp: number,
+    timestamp?: number,
     token: string
 }

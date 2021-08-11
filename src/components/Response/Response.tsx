@@ -1,11 +1,19 @@
 import React from 'react'
 import styles from './Response.module.css'
+import {timeConverter} from "../Message/Message"
 
-const Response = () => {
+type Props = {
+  message: string;
+  timestamp: number;
+}
+
+const Response: React.FC<Props>  = ({ message, timestamp}) => {
+  let convertedTimestamp = timeConverter(timestamp)
+
   return (
     <div className={styles.responseBubble}>
-      <p className={styles.text}>Hey Folks! I wanted to get in touch with you regarding the project. Please, let me know how you plan to contribute.</p>
-      <p className={styles.smallText}>10 Mar 2018 10:22</p>
+      <p className={styles.text}>{message}</p>
+      <p className={styles.smallText}>{convertedTimestamp}</p>
     </div>
   )
 }

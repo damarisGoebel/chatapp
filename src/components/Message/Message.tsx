@@ -8,7 +8,7 @@ type Props = {
 }
 
 
-function timeConverter(timestamp: number){
+export function timeConverter(timestamp: number){
     let a = new Date(timestamp);
     let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     let year = a.getFullYear();
