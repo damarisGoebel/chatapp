@@ -43,7 +43,7 @@ const Message: React.FC<Props> = ({ author, message, timestamp }) => {
           author === 'Damaris' ? styles.messageOut : styles.messageIn,
         )}
       >
-        <p className={styles.smallText}>{author}</p>
+        {author !== 'Damaris' && <p className={styles.smallText}>{author}</p>}
         <p className={styles.text}>{message}</p>
         <p className={styles.smallText}>{convertedTimestamp}</p>
       </div>

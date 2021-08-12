@@ -10,10 +10,12 @@
     border-radius: 6px;
     padding: 12px 20px;
     font-size: 18px;
-    width: 80%;
+    width: 90%;
     margin-right: 8px;
 }
 
 .form {
     padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
 }
