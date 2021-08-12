@@ -34,7 +34,18 @@ export function timeConverter(timestamp: number) {
 }
 
 const Message: React.FC<Props> = ({ author, message, timestamp }) => {
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 480;
+
   let convertedTimestamp = timeConverter(timestamp)
+
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+     window.addEventListener("resize", handleResizeWindow);
+     return () => {
+       window.removeEventListener("resize", handleResizeWindow);
+     };
+   }, []);
   return (
     <div className={styles.messageItem}>
       <div
@@ -43,6 +54,7 @@ const Message: React.FC<Props> = ({ author, message, timestamp }) => {
           author === 'Damaris' ? styles.messageOut : styles.messageIn,
         )}
       >
+        {width < breakpoint && author === 'Damaris' && <p className={styles.smallText}>You</p>  }
         {author !== 'Damaris' && <p className={styles.smallText}>{author}</p>}
         <p className={styles.text}>{message}</p>
         <p className={styles.smallText}>{convertedTimestamp}</p>
