@@ -21,6 +21,11 @@ body {
   box-sizing: inherit;
 }
 
+*:hover,
+*:focus {
+  outline: none;
+}
+
 html, body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
