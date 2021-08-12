@@ -26,14 +26,26 @@
     align-self: flex-end;
 }
 
-.smallText {
+.messageIn > .smallText {
     font-size: 16px; 
     color: var(--font-grey-light);
     text-align: left;
 }
 
-.text {
+.messageOut > .smallText {
+    font-size: 16px; 
+    color: var(--font-grey-light);
+    text-align: right;
+}
+
+.messageIn > .text {
     font-size: 20px; 
     color: var(--font-grey-dark);
     text-align: left;
+}
+
+.messageOut > .text {
+    font-size: 20px; 
+    color: var(--font-grey-dark);
+    text-align: right;
 }
