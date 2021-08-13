@@ -20,6 +20,19 @@
     justify-content: space-between;
 }
 
+.button {
+    background-color: var(--orange);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 18px;
+}
+
 @media only screen and (max-width: 480px) {
     .footer {
         background-color: var(--grey);
@@ -31,6 +44,13 @@
     }
     .form {
         padding: 14px 0;
+    }
+
+    .button {
+        background-color: transparent;
+        color: var(--font-grey-dark);
+        font-weight: bold;
+        padding:0;
     }
 
 }

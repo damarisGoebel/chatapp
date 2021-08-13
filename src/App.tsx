@@ -21,9 +21,11 @@ function App() {
 
   React.useEffect(() => {
     getAllMessages().then(function (result) {
-      setMessages(result)
+      let allMessages = result
+      let last10Messages = allMessages.slice(-10)
+      setMessages(last10Messages)
     })
-  }, [])
+  }, [messages])
 
   return (
     <div>

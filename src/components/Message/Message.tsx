@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import styles from './Message.module.css'
+import {decode} from 'html-entities'
 
 type Props = {
   author: string
@@ -38,14 +39,15 @@ const Message: React.FC<Props> = ({ author, message, timestamp }) => {
   const breakpoint = 480;
 
   let convertedTimestamp = timeConverter(timestamp)
+  const decodedMessage = decode(message)
 
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
-     window.addEventListener("resize", handleResizeWindow);
-     return () => {
-       window.removeEventListener("resize", handleResizeWindow);
-     };
-   }, []);
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
   return (
     <div className={styles.messageItem}>
       <div
@@ -56,7 +58,7 @@ const Message: React.FC<Props> = ({ author, message, timestamp }) => {
       >
         {width < breakpoint && author === 'Damaris' && <p className={styles.smallText}>You</p>  }
         {author !== 'Damaris' && <p className={styles.smallText}>{author}</p>}
-        <p className={styles.text}>{message}</p>
+        <p className={styles.text}>{decodedMessage}</p>
         <p className={styles.smallText}>{convertedTimestamp}</p>
       </div>
     </div>
